@@ -5,7 +5,8 @@
 </div>
 
 An attempt to port theme called Dark (2016) from QtCreator to NeoVim.
-Supports Treesitter.
+
+Includes support for Treesitter and GitSigns.
 
 ```
 :colorscheme qtcreator
