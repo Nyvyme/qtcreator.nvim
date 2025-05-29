@@ -1,7 +1,11 @@
 local variants = {
   dark = {
     bg = "#2e2f30",
+    bg_light = "#333334",
     fg = "#d6cf9a",
+    ws = "#4c4d50",
+    linenr_bg = "#404244",
+    cc_bg = "#3b3c3c",
 
     reddark = "#ff0000",
     red = "#ff8080",
@@ -17,6 +21,9 @@ local variants = {
     purple = "#d69aa7",
     cyan = "#1d545c",
     cyandark = "#264146",
+    greylight = "#bec0c2",
+
+    debug_color = "#ff00ff",
   },
 }
 
