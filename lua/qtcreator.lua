@@ -53,7 +53,6 @@ local function set_highlights()
     Structure = { fg = palette.cyanlight, italic = styles.italic },
     Repeat = { fg = palette.cyanlight, italic = styles.italic },
     Conditional = { fg = palette.cyanlight, italic = styles.italic },
-    Constant = { fg = palette.fg },
     Float = { link = "Number" },
 
     GitSignsAdd = { fg = palette.reddark, bg = "NONE" },
@@ -65,23 +64,27 @@ local function set_highlights()
     ["@variable.parameter"] = { fg = palette.peach, bold = styles.bold },
     ["@variable.member"] = { fg = palette.peach },
 
-    ["@constant"] = { fg = palette.green, italic = styles.italic },
-    ["@constant.builtin"] = { fg = palette.cyanlight, italic = false },
-    ["@constant.macro"] = { fg = palette.fg, italic = false },
+    ["@constant.builtin"] = { fg = palette.blue },
+    ["@constant.macro"] = { fg = palette.fg },
 
     ["@function"] = { link = "Function" },
-    ["@function.macro"] = { link = "Macro" },
+    ["@function.macro"] = { fg = palette.fg, italic = false },
     ["@function.method"] = { link = "Function" },
-    ["@function.call"] = { bold = false },
+    ["@function.call"] = { fg = palette.fg, bold = false },
     ["@function.method.call"] = { bold = false },
 
     ["@type"] = { fg = palette.red },
     ["@type.builtin"] = { fg = palette.purple },
+    ["@type.definition"] = { bold = true },
 
-    ["@keyword.directive"] = { link = "Macro" },
+    ["@keyword.directive"] = { link = "Define" },
+    ["@keyword.import"] = { link = "Include" },
     ["@keyword.directive.define"] = { link = "Define" },
 
     ["@punctuation.special"] = { fg = palette.peach },
+
+    ["@lsp.type.variable"] = { fg = palette.peach },
+    ["@lsp.type.enumMember"] = { fg = palette.green, italic = true },
   }
 
   for group, highlight in pairs(highlights) do
