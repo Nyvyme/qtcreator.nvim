@@ -8,3 +8,5 @@ config.options = {
     italic = true,
   },
 }
+
+return config
