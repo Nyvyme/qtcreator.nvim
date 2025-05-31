@@ -7,6 +7,7 @@ local function set_highlights()
 
   local highlights = {
     Normal = { fg = palette.fg, bg = palette.bg },
+
     Cursor = { fg = palette.bg, bg = palette.fg },
     lCursor = { link = "Cursor" },
     CursorIM = { link = "Cursor" },
@@ -24,14 +25,23 @@ local function set_highlights()
     },
     Whitespace = { fg = palette.ws },
     Visual = { fg = palette.greylight, bg = palette.cyan },
+    VisualNOS = { fg = palette.greylight, bg = palette.cyandark },
     MatchParen = { fg = palette.fg, bg = palette.cyandark },
+    WinSeparator = { fg = palette.greylight, bg = palette.linenr_bg },
+    ModeMsg = { fg = palette.greylight, bg = palette.linenr_bg },
+    MsgArea = { fg = palette.greylight, bg = palette.linenr_bg },
 
     LspCodeLens = { fg = palette.greylight, bg = palette.cyan },
     LspReferenceRead = { bg = palette.cyandark },
     LspReferenceText = { bg = palette.cyandark },
     LspReferenceWrite = { bg = palette.cyandark },
 
-    Boolean = { fg = palette.cyanlight },
+    StatusLine = { fg = palette.greylight, bg = palette.linenr_bg },
+    StatusLineNC = { link = "StatusLine" },
+    StatusLineTerm = { link = "StatusLine" },
+    StatusLineTermNC = { link = "StatusLine" },
+
+    Boolean = { fg = palette.cyanlight, italic = styles.italic },
     Character = { fg = palette.brown },
     String = { fg = palette.brown },
     Define = { fg = palette.pink },
@@ -60,31 +70,42 @@ local function set_highlights()
     GitSignsDelete = { fg = palette.reddark, bg = "NONE" },
 
     ["@variable"] = { fg = palette.fg },
-    ["@variable.builtin"] = { fg = palette.blue },
-    ["@variable.parameter"] = { fg = palette.peach, bold = styles.bold },
+    ["@variable.builtin"] = { fg = palette.cyanlight, italic = styles.italic },
+    ["@variable.parameter"] = { fg = palette.peach },
     ["@variable.member"] = { fg = palette.peach },
 
-    ["@constant.builtin"] = { fg = palette.blue },
+    ["@constant"] = { fg = palette.fg },
+    ["@constant.builtin"] = { fg = palette.cyanlight, italic = styles.italic },
     ["@constant.macro"] = { fg = palette.fg },
+
+    ["@constructor"] = { fg = palette.fg, bold = styles.bold },
 
     ["@function"] = { link = "Function" },
     ["@function.macro"] = { fg = palette.fg, italic = false },
     ["@function.method"] = { link = "Function" },
     ["@function.call"] = { fg = palette.fg, bold = false },
-    ["@function.method.call"] = { bold = false },
+    ["@function.method.call"] = { fg = palette.fg, bold = false },
 
     ["@type"] = { fg = palette.red },
     ["@type.builtin"] = { fg = palette.purple },
-    ["@type.definition"] = { bold = true },
+    ["@type.definition"] = { fg = palette.red, bold = true },
 
     ["@keyword.directive"] = { link = "Define" },
     ["@keyword.import"] = { link = "Include" },
     ["@keyword.directive.define"] = { link = "Define" },
 
+    ["@punctuation.delimiter"] = { fg = palette.fg },
+    ["@punctuation.bracket"] = { fg = palette.fg },
     ["@punctuation.special"] = { fg = palette.peach },
 
+    ["@module"] = { fg = palette.red },
+    ["@module.builtin"] = { fg = palette.cyanlight, italic = styles.italic },
+
+    ["@lsp.type.macro"] = { fg = palette.red },
     ["@lsp.type.variable"] = { fg = palette.peach },
-    ["@lsp.type.enumMember"] = { fg = palette.green, italic = true },
+    ["@lsp.type.enumMember"] = { fg = palette.green, italic = styles.italic },
+    ["@lsp.type.property"] = { fg = palette.fg, bold = styles.bold },
+    ["@lsp.mod.definition"] = { bold = styles.bold },
   }
 
   for group, highlight in pairs(highlights) do
