@@ -57,7 +57,7 @@ local function set_highlights()
     Label = { fg = palette.yellow, bold = styles.bold },
     Statement = { fg = palette.cyanlight, italic = styles.italic },
     Keyword = { fg = palette.cyanlight, italic = styles.italic },
-    Function = { bold = styles.bold },
+    Function = { fg = palette.fg },
     Operator = { fg = palette.peach },
     Comment = { fg = palette.grey, italic = styles.italic },
     Structure = { fg = palette.cyanlight, italic = styles.italic },
