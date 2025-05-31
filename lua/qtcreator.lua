@@ -104,7 +104,7 @@ local function set_highlights()
     ["@lsp.type.macro"] = { fg = palette.fg },
     ["@lsp.type.variable"] = { fg = palette.peach },
     ["@lsp.type.enumMember"] = { fg = palette.green, italic = styles.italic },
-    ["@lsp.type.property"] = { fg = palette.fg, bold = styles.bold },
+    ["@lsp.type.property"] = { fg = palette.fg },
     ["@lsp.mod.definition"] = { bold = styles.bold },
   }
 
